@@ -11,7 +11,13 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE 
+  # Return false on empty arrays
+  arr.empty? && (return false)
+  
+  # I used the following link for help: https://stackoverflow.com/questions/1573029/getting-all-combinations-of-pairs-from-a-list-in-ruby
+  for i in arr.combination(2).to_a.each; (n == sum(i)) && (return true); end
+
+  false
 end
 
 # Part 2
