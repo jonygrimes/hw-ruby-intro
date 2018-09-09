@@ -3,11 +3,11 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.reduce(0, :+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  arr.max(2).reduce(:+) == nil ? 0 : arr.max(2).reduce(:+)
 end
 
 def sum_to_n? arr, n
