@@ -23,11 +23,16 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, "+name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  s.empty? && (return false)
+  
+  # I used the following link for help: https://stackoverflow.com/questions/1986386/check-if-a-value-exists-in-an-array-in-ruby
+  return (['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'].include? s[0].downcase)
+  
+  #if (['a','e','i','o','u'].include? s[0].downcase) <- noncharacters return false, so this would not be the best to use
 end
 
 def binary_multiple_of_4? s
