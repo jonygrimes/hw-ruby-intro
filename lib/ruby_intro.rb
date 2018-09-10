@@ -50,7 +50,7 @@ class BookInStock
   end
   
   #I used the following link to help: https://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency
-  def price_as_string; number_to_currency(@price); end
+  def price_as_string; sprintf( "\$%0.02f", @price); end
   
   attr_accessor :isbn; attr_accessor :price
 end
