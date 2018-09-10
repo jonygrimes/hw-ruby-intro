@@ -31,15 +31,26 @@ def starts_with_consonant? s
   (s.empty? or s =~ /[^[:alpha:]]/) && (return false)
   
   # I used the following link for help: https://stackoverflow.com/questions/1986386/check-if-a-value-exists-in-an-array-in-ruby
-  !(['a','e','i','o','u'].include? s[0].downcase) #<- noncharacters return false, so this would not be the best to use
+  !(['a','e','i','o','u'].include? s[0].downcase)
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  # I used the following link for help: https://stackoverflow.com/questions/19305067/regex-binary-multiple-of-4
+  ((s =~ /^[10]*00$/) || (s =~ /^[0]*0$/)) && (return true)
+  false
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def raisealarm(); raise ArgumentError; end
+  
+  def initialize isbn, price
+    (isbn.empty? || price <= 0) && raisealarm(); @isbn, @price = isbn, price
+  end
+  
+  #I used the following link to help: https://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency
+  def price_as_string; number_to_currency(@price); end
+  
+  attr_accessor :isbn; attr_accessor :price
 end
